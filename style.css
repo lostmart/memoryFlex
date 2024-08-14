@@ -1,0 +1,123 @@
+:root {
+	--primary: #27888e;
+	--secondary: #ef516f;
+	--primary-alt: #1b6064;
+	--contrast: #ededed;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	font-family: "Anek Devanagari", sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 8px;
+}
+
+h1,
+h2 {
+	margin-top: 0;
+	margin-bottom: 0.125em;
+}
+
+.card_container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.25em;
+	max-width: 566px;
+	margin: auto;
+	perspective: 1000px;
+}
+
+.card {
+	width: 22%;
+	aspect-ratio: 9/13;
+	background-color: var(--primary);
+	border: 1px solid var(--primary-alt);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2px;
+	font-size: 2em;
+	cursor: pointer;
+	position: relative;
+	transition: all 260ms ease-in-out;
+	color: var(--contrast);
+	/* background-image: url("./assets/capitain.jpg"); */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	transform-style: preserve-3d;
+	/* backface-visibility: hidden; */
+	transform: rotateY(180deg);
+}
+
+.card::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	inset: 0;
+	background-color: var(--secondary);
+	transition: all 190ms ease-in-out;
+}
+
+.card span {
+	transition: opacity 310ms ease-in-out;
+}
+.card:hover {
+	background-color: var(--primary-alt);
+	font-size: 2.1em;
+	box-shadow: 0 0 2px 2px var(--secondary);
+}
+
+.animate__rotate {
+	transform: rotateY(0);
+}
+
+.card.animate__rotate:before {
+	opacity: 0;
+}
+
+.card.animate__rotate:hover {
+	box-shadow: 0 0 0 0 var(--secondary);
+}
+
+.card.animate__rotate > span {
+	opacity: 0;
+}
+
+.modal {
+	position: fixed;
+	width: 100%;
+	inset: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #b3b3b3a3;
+	z-index: 10;
+	backdrop-filter: blur(2px);
+	display: none;
+}
+
+.modal > h2 {
+	opacity: 0;
+	font-size: 2em;
+}
+
+@keyframes bounceIn {
+	from {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.boundInClass {
+	animation: bounceIn 340ms ease-in-out forwards;
+	animation-delay: 500ms;
+}
