@@ -17,8 +17,11 @@ const cardArray = document.querySelectorAll(".card")
 // global variables
 let isFlipped = false
 let firstCard, secondCard
+let loackBoard = false
 
 function flipCard() {
+	if (loackBoard) return
+
 	this.classList.toggle("animate__rotate")
 	// set first card
 	if (!isFlipped) {
@@ -28,6 +31,8 @@ function flipCard() {
 		// set the second card
 		isFlipped = false
 		secondCard = this
+		// loack the board
+		loackBoard = true
 		// check if they match
 		if (
 			firstCard.getAttribute("hero-name") ===
@@ -35,10 +40,12 @@ function flipCard() {
 		) {
 			firstCard.removeEventListener("click", flipCard)
 			secondCard.removeEventListener("click", flipCard)
+			loackBoard = false
 		} else {
 			setTimeout(() => {
 				firstCard.classList.remove("animate__rotate")
 				secondCard.classList.remove("animate__rotate")
+				loackBoard = false
 			}, 980)
 		}
 	}
