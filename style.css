@@ -85,7 +85,7 @@ h1 {
 	box-shadow: 0 0 0 0 var(--secondary);
 }
 
-.card.animate__rotate>span {
+.card.animate__rotate > span {
 	opacity: 0;
 }
 
@@ -103,7 +103,7 @@ h1 {
 	display: none;
 }
 
-.modal>h2 {
+.modal > h2 {
 	opacity: 0;
 	font-size: 2em;
 }
@@ -137,25 +137,41 @@ h1 {
 }
 
 .final_result {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(2px);
+	visibility: visible;
+	inset: 0;
+	z-index: 10;
+}
+
+.final_result::before {
 	position: fixed;
-	width: 100%;
-	height: 100%;
+	width: 100dvw;
+	height: 100dvh;
 	inset: 0;
 	background-color: #d5d0d096;
+	content: "";
+	z-index: -1;
+}
+
+.final_container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	backdrop-filter: blur(2px);
 	flex-direction: column;
-	visibility: hidden;
+	padding: 1em 1.5em;
+	background-color: white;
 }
 
-.final_result>h2 {
+.final_container > h2 {
 	font-size: 5em;
-	margin-bottom: 0;
+	margin: 0.125em 0;
 	line-height: 1;
 }
 
-.final_result span {
+.final_container span {
 	font-size: 2em;
 }
