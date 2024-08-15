@@ -15,6 +15,8 @@ const combinedArray = imagesArray.concat(clonedArray)
 const cardArray = document.querySelectorAll(".card")
 const spanMissed = document.querySelector(".missed")
 const spanMissedFinal = document.querySelector(".missed_final")
+const finalBtn = document.querySelector(".final_btn")
+const restartBtn = document.querySelector(".restart_btn")
 
 // global variables
 let isFlipped = false
@@ -88,4 +90,14 @@ cardArray.forEach((card, i) => {
 	card.style.backgroundImage = `url("./assets/${combinedArray[i].imageUrl}")`
 	card.addEventListener("click", flipCard)
 	card.setAttribute("hero-name", combinedArray[i].heroName)
+})
+
+finalBtn.addEventListener("click", (e) => {
+	e.stopPropagation()
+	document.querySelector(".final_result").style.visibility = "hidden"
+	restartBtn.style.visibility = "visible"
+})
+
+restartBtn.addEventListener("click", () => {
+	window.location.reload()
 })
