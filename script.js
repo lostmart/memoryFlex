@@ -2,9 +2,9 @@ const imagesArray = [
 	{ heroName: "capitain", imageUrl: "capitain.jpg" },
 	{ heroName: "ironman", imageUrl: "ironman.jpg" },
 	{ heroName: "spiderman", imageUrl: "spider.jpg" },
-	{ heroName: "strange", imageUrl: "strange.jpg" },
-	{ heroName: "thor", imageUrl: "thor.jpg" },
-	{ heroName: "widow", imageUrl: "widow.jpg" },
+	{ heroName: "deadpool", imageUrl: "deadpool.jpg" },
+	{ heroName: "wolverine", imageUrl: "wolverine.jpg" },
+	{ heroName: "superman", imageUrl: "superman.jpg" },
 ]
 
 const icons = ["🥇", "🥈", "🥉", "🎃"]
