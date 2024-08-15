@@ -66,6 +66,7 @@ h1 {
 .card span {
 	transition: opacity 310ms ease-in-out;
 }
+
 .card:hover {
 	background-color: var(--primary-alt);
 	font-size: 2.1em;
@@ -84,7 +85,7 @@ h1 {
 	box-shadow: 0 0 0 0 var(--secondary);
 }
 
-.card.animate__rotate > span {
+.card.animate__rotate>span {
 	opacity: 0;
 }
 
@@ -102,7 +103,7 @@ h1 {
 	display: none;
 }
 
-.modal > h2 {
+.modal>h2 {
 	opacity: 0;
 	font-size: 2em;
 }
@@ -112,6 +113,7 @@ h1 {
 		transform: translateY(-100%);
 		opacity: 0;
 	}
+
 	to {
 		opacity: 1;
 	}
@@ -145,4 +147,15 @@ h1 {
 	justify-content: center;
 	backdrop-filter: blur(2px);
 	flex-direction: column;
+	visibility: hidden;
+}
+
+.final_result>h2 {
+	font-size: 5em;
+	margin-bottom: 0;
+	line-height: 1;
+}
+
+.final_result span {
+	font-size: 2em;
 }

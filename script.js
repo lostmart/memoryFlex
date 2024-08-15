@@ -6,6 +6,8 @@ const imagesArray = [
 	{ heroName: "thor", imageUrl: "thor.jpg" },
 	{ heroName: "widow", imageUrl: "widow.jpg" },
 ]
+
+const icons = ["🥇", "🥈", "🥉", "🎃"]
 const clonedArray = [...imagesArray]
 
 const combinedArray = imagesArray.concat(clonedArray)
@@ -35,7 +37,7 @@ function flipCard() {
 		// set the second card
 		isFlipped = false
 		secondCard = this
-		// loack the board
+		// lock the board
 		lockBoard = true
 		// check if they match
 		if (
@@ -56,7 +58,18 @@ function flipCard() {
 			}, 980)
 		}
 	}
-	console.log(firstCard.getAttribute("hero-name"))
+	console.log(correctCards)
+	// finish game
+	if (correctCards == 6) {
+		console.log("run the final")
+		document.querySelector(".final_result").style.visibility = "visible"
+		document.querySelector(".missed_final").classList.add("animate__animated")
+		document.querySelector(".missed_final").classList.add("animate__bounceIn")
+		document.querySelector(".missed_final").classList.add("animate__bounceIn")
+		document.querySelector(".missed_final").innerText = `Missed: ${missed}`
+		document.querySelector(".final_icon").classList.add("animate__animated")
+		document.querySelector(".final_icon").classList.add("animate__bounceIn")
+	}
 }
 
 cardArray.forEach((card, i) => {
