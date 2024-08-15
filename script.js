@@ -63,6 +63,9 @@ function flipCard() {
 	if (correctCards == 6) {
 		console.log("run the final")
 		document.querySelector(".final_result").style.visibility = "visible"
+		document
+			.querySelector(".final_result")
+			.addEventListener("click", () => window.location.reload())
 		document.querySelector(".missed_final").classList.add("animate__animated")
 		document.querySelector(".missed_final").classList.add("animate__bounceIn")
 		document.querySelector(".missed_final").classList.add("animate__bounceIn")
