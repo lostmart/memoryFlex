@@ -20,12 +20,18 @@ h1 {
 	text-align: center;
 }
 
+.main_section {
+	position: relative;
+	max-width: 566px;
+	margin: auto;
+}
+
 .card_container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 0.25em;
-	max-width: 566px;
+	width: 100%;
 	margin: auto;
 	perspective: 1000px;
 }
@@ -126,14 +132,13 @@ h1 {
 
 .missed {
 	position: absolute;
-	right: 1em;
-	top: 1em;
+	right: 3%;
+	top: .5em;
 	background-color: #e7e7e7;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 50px;
-	width: 83px;
+	width: 81px;
+	text-align: center;
+	padding-top: .125em;
+	padding-bottom: 0.125em;
 }
 
 .final_result {

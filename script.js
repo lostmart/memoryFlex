@@ -72,6 +72,15 @@ function flipCard() {
 		document.querySelector(".missed_final").innerText = `Missed: ${missed}`
 		document.querySelector(".final_icon").classList.add("animate__animated")
 		document.querySelector(".final_icon").classList.add("animate__bounceIn")
+		if (missed <= 1) {
+			document.querySelector(".final_icon").innerHTML = icons[0]
+		} else if (missed <= 3) {
+			document.querySelector(".final_icon").innerHTML = icons[1]
+		} else if (missed <= 5) {
+			document.querySelector(".final_icon").innerHTML = icons[2]
+		} else if (missed <= 7) {
+			document.querySelector(".final_icon").innerHTML = icons[3]
+		}
 	}
 }
 
