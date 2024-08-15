@@ -10,17 +10,21 @@ const clonedArray = [...imagesArray]
 
 const combinedArray = imagesArray.concat(clonedArray)
 
-console.log(combinedArray)
-
 const cardArray = document.querySelectorAll(".card")
+const spanMissed = document.querySelector(".missed")
+const spanMissedFinal = document.querySelector(".missed_final")
 
 // global variables
 let isFlipped = false
 let firstCard, secondCard
-let loackBoard = false
+let lockBoard = false
+let correctCards = 0
+let missed = 0
+
+spanMissed.innerText = `Missed: ${missed}`
 
 function flipCard() {
-	if (loackBoard) return
+	if (lockBoard) return
 
 	this.classList.toggle("animate__rotate")
 	// set first card
@@ -32,7 +36,7 @@ function flipCard() {
 		isFlipped = false
 		secondCard = this
 		// loack the board
-		loackBoard = true
+		lockBoard = true
 		// check if they match
 		if (
 			firstCard.getAttribute("hero-name") ===
@@ -40,12 +44,15 @@ function flipCard() {
 		) {
 			firstCard.removeEventListener("click", flipCard)
 			secondCard.removeEventListener("click", flipCard)
-			loackBoard = false
+			lockBoard = false
+			correctCards++
 		} else {
+			missed++
+			spanMissed.innerText = `Missed: ${missed}`
 			setTimeout(() => {
 				firstCard.classList.remove("animate__rotate")
 				secondCard.classList.remove("animate__rotate")
-				loackBoard = false
+				lockBoard = false
 			}, 980)
 		}
 	}

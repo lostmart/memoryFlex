@@ -14,10 +14,10 @@ body {
 	padding: 8px;
 }
 
-h1,
-h2 {
+h1 {
 	margin-top: 0;
 	margin-bottom: 0.125em;
+	text-align: center;
 }
 
 .card_container {
@@ -120,4 +120,29 @@ h2 {
 .boundInClass {
 	animation: bounceIn 340ms ease-in-out forwards;
 	animation-delay: 500ms;
+}
+
+.missed {
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	background-color: #e7e7e7;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	width: 83px;
+}
+
+.final_result {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	inset: 0;
+	background-color: #d5d0d096;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	backdrop-filter: blur(2px);
+	flex-direction: column;
 }
